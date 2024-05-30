@@ -1,0 +1,25 @@
+---
+spell: {{ spell }}
+SpellLevel: {{ spellLevel }}
+SpellSchool: {{ spellSchool }}
+SpellCastingTime: {{ spellCastingTime }}
+SpellRange: {{ spellRange }}
+SpellComponents: |
+    {% for item in spellComponents %} {{ item }} {% endfor %}!!!
+SpellMaterialComponents: {{ spellMaterialComponents }}
+SpellDuration: {{ spellDuration }}
+SpellClasses: {{ spellClasses | join(",") }}
+Source: {{ source }}
+---
+
+#### {{ spell }} ([[ {{ spellEngKebab }}|{{ spellEng }} ]])
+*Уровень {{ spellLevel }}, {{ spellSchool }}*
+- **Компоненты:** {{ spellComponents | join(", ") }}  {{ spellMaterialComponents }}
+- **Время накладывания:** {{ spellCastingTime }}
+- **Длительность:** {{ spellDuration }}
+- **Дистанция:**  {{ spellRange }}
+{{ spellDescription }}
+
+*Классы:* {{ spellClasses | join(", ") }}
+
+*Источник: {{ source }}*
